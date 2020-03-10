@@ -2,7 +2,7 @@ require './lib/scraper'
 require 'nokogiri'
 
 RSpec.describe Scraper do
-  let (:scraper) { Scraper.new}
+  let(:scraper) { Scraper.new }
   describe '#course' do
     it 'returns a Hash' do
       expect(scraper.course.is_a?(Hash)).to eq(true)

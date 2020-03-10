@@ -6,8 +6,8 @@ class Scraper
 
   def initialize
     @link = 'https://www.udacity.com/school-of-programming'
-    @page = Nokogiri::HTML.parse(open(@link))
-    @program = Hash.new
+    @page = Nokogiri::HTML(open(@link))
+    @program = {}
   end
 
   def course
@@ -17,7 +17,7 @@ class Scraper
     end
     @program
   end
-  
+
   private
 
   def headings
@@ -30,5 +30,4 @@ class Scraper
   program.each_with_index do |(key, value), idx|
     puts "#{idx + 1}. #{key} => #{value}"
   end
-
 end
