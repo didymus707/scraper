@@ -1,30 +1,34 @@
-require 'httparty'
-require 'open-uri'
 require 'nokogiri'
-require 'pry'
+require 'open-uri'
 
-# page = HTTParty.get('https://newyork.craigslist.org/search/pet')
-# parse_page = Nokogiri::HTML(page)
+class Scraper
+  attr_reader :link
 
-# doc = Nokogiri::HTML.parse(open("https://newyork.craigslist.org/search/pet/"))
+  def initialize
+    @link = 'https://www.udacity.com/school-of-programming'
+    @page = Nokogiri::HTML.parse(open(@link))
+    @program = Hash.new
+  end
 
-# link = 'https://www.aliexpress.com/category/200000668/shirts.html?spm=a2g0o.tm66085.102.6.47fd5f5bIPRwjf'
+  def course
+    headings.each do |element|
+      element_key = element.text
+      @program[element_key] = element.next.next_sibling.children[1].text.split(',')
+    end
+    @program
+  end
+  
+  private
 
-link = 'https://www.aliexpress.com/'
+  def headings
+    @page.css('.upcoming-section').css('.light')
+  end
 
-# link = 'https://newyork.craigslist.org/search/pet'
-page = Nokogiri::HTML.parse(open(link))
+  scraper = Scraper.new
+  program = scraper.course
 
+  program.each_with_index do |(key, value), idx|
+    puts "#{idx + 1}. #{key} => #{value}"
+  end
 
-Pry.start(binding)
-
-# class Scraper
-#   attr_accessor :link
-
-#   def initialize(link)
-#     @link = link
-#     @doc = Nokogiri::HTML(open(@link))
-#   end
-#   @doc.css()
-
-# end
+end
