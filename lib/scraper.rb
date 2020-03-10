@@ -1,12 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
 
-
-# @link = 'https://www.udacity.com/school-of-programming'
-# @page = Nokogiri::HTML.parse(open(@link))
-# puts @page.css('.upcoming-section').css('.light').class
-
-
 class Scraper
   attr_reader :link
 
