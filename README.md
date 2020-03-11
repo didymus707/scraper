@@ -32,6 +32,7 @@ gem install nokogiri
 ``` 
 - Or [go here](https://github.com/sparklemotion/nokogiri) if you have troubles installing Nokogiri
 - Once you are in the working directory of the scraper project, you can open your terminal and run this command ```ruby lib/scraper.rb``` which will then bring up the result of the parsed page
+- You can go [here](https://www.notion.so/microverse/Build-your-own-scraper-f54eaca54d8a4d758a5f0141468127a8) to see the project specifications
 
 ### Prerequisites
 
