@@ -1,12 +1,12 @@
 require 'nokogiri'
-require 'open-uri'
+require 'httparty'
 
 class Scraper
   attr_reader :link
 
   def initialize
-    @link = 'https://www.udacity.com/school-of-programming'
-    @page = Nokogiri::HTML(open(@link))
+    @link = HTTParty.get('https://www.udacity.com/school-of-programming')
+    @page = Nokogiri::HTML.parse(@link)
     @program = {}
   end
 
