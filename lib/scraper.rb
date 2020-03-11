@@ -6,7 +6,7 @@ class Scraper
 
   def initialize
     @link = HTTParty.get('https://www.udacity.com/school-of-programming')
-    @page = Nokogiri::HTML.parse(@link)
+    @page = Nokogiri::HTML(@link)
     @program = {}
   end
 
@@ -22,12 +22,5 @@ class Scraper
 
   def headings
     @page.css('.upcoming-section').css('.light')
-  end
-
-  scraper = Scraper.new
-  program = scraper.course
-
-  program.each_with_index do |(key, value), idx|
-    puts "#{idx + 1}. #{key} => #{value}"
   end
 end

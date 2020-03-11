@@ -1,4 +1,4 @@
-require './lib/scraper'
+require './bin/main'
 require 'nokogiri'
 
 RSpec.describe Scraper do
