@@ -2,12 +2,12 @@ require './lib/scraper'
 
 scraper = Scraper.new
 program = scraper.course
+keys = program.keys
 
-program.each_with_index do |(key, value), idx|
-  puts "#{idx + 1}. #{key}: \nContents covered are => #{value}"
+program.each_with_index do |(course, prerequisites), index|
+  puts "#{index + 1}. #{course}: \nContents covered are => #{prerequisites}"
 end
 
-puts "\nSelect the course you want to open up by typing in the name"
-answer = gets.chomp.split.map(&:capitalize).join(' ')
-puts answer
-puts "\n #{program.fetch(answer).join(',')}"
+puts "\nSelect the number of the course you want to open up"
+answer = gets.to_i
+puts "\n #{program[keys[answer - 1]].join(',')}"
