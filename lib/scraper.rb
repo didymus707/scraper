@@ -12,7 +12,7 @@ class Scraper
 
   def course
     headings.each do |element|
-      element_key = element.text
+      element_key = element.text.strip
       @program[element_key] = element.next.next_sibling.children[1].text.split(',')
     end
     @program

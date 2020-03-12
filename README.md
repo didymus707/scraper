@@ -1,5 +1,6 @@
 # Scraper
 A Web Scraper is a program that quite literally scrapes or gathers data off of websites.
+What this does is to grab information about the programs and the contents being taught in the school of programming and the return the result to the user
 
 The main goal of this project is to put into practice concepts learned in Object Oriented Programming. Particularly, classes and access to their attributes.
 
@@ -25,17 +26,11 @@ Read more about it [here](https://github.com/sparklemotion/nokogiri)
 - Clone or download this project into your preferred directory in your machine
 - Change your working directory into where the project is stored
 - Make sure you have **Nokogiri** installed
-- You can use this 
-```
-gem install nokogiri
-``` 
-- Or [go here](https://github.com/sparklemotion/nokogiri) if you have troubles installing Nokogiri
+- [Click here](https://github.com/sparklemotion/nokogiri) to read on **Nokogiri**
 - Make sure **HTTParty** is installed
 - You can do that by running 
-```
-gem install httparty
-```
-- Or go [here](https://rubygems.org/gems/httparty) to read more about it
+- Or you can go [here](https://rubygems.org/gems/httparty) to read more about it
+- Run ```bundle install``` to install all dependencies in the gemfile
 - Once you are in the working directory of the scraper project, you can open your terminal and run this command ```ruby bin/main.rb``` which will then bring up the result of the parsed page
 - You can read more about the project [here](https://www.notion.so/microverse/Build-your-own-scraper-f54eaca54d8a4d758a5f0141468127a8) to see its specifications
 
