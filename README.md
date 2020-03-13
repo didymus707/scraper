@@ -31,7 +31,7 @@ Read more about it [here](https://github.com/sparklemotion/nokogiri)
 - You can do that by running 
 - Or you can go [here](https://rubygems.org/gems/httparty) to read more about it
 - Run ```bundle install``` to install all dependencies in the gemfile
-- Once you are in the working directory of the scraper project, you can open your terminal and run this command ```ruby bin/main.rb``` which will then bring up the result of the parsed page
+- Once you are in the working directory of the scraper project, you can open your terminal and run this command ```ruby bin/scraper.rb``` which will then bring up the result of the parsed page
 - You can read more about the project [here](https://www.notion.so/microverse/Build-your-own-scraper-f54eaca54d8a4d758a5f0141468127a8) to see its specifications
 
 ### Prerequisites
